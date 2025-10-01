@@ -2,7 +2,9 @@
   <div class="text-center m-5 p-5">
     <h1>TASKS TRACKER</h1>
     <h3>Your best tasks manager</h3>
-    <%= link_to "Sing in", new_user_session_path, class: "btn btn-primary" %>
-    <%= link_to "Sing up", new_user_registration_path, class: "btn btn-primary" %>
+    <% unless user_signed_in? %>
+      <%= link_to "Sing in", new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to "Sing up", new_user_registration_path, class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
