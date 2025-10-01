@@ -1,18 +1,17 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-4 col-md-6 col-8 bg-white m-3">
-      <h2 class="m-3 text-center">Sign up</h2>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-            <div class="form-inputs">
-              <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }%>
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" } %>
-              <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" } %>
-            </div>
+      <h2 class="m-3 text-center">Sing in</h2>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
+          <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
 
-            <div class="form-actions">
-              <%= f.button :submit, "Sign up", class: "my-3 btn-brown" %>
-            </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Log in", class: "my-3 btn btn-primary"%>
+      </div>
       <% end %>
     </div>
   </div>
