@@ -1,5 +1,8 @@
 class Task < ApplicationRecord
+  belongs_to :user
   has_many :task_sessions, dependent: :destroy
+
+  validates :title, presence: true
 
   enum status: {
     pending: 0,
@@ -7,5 +10,4 @@ class Task < ApplicationRecord
     completed: 2
   }
 
-  validates :title, presence: true
 end
