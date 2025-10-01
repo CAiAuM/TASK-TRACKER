@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container m-5">
+  <h1>TASKS TRACKER</h1>
+  <h3>Your best tasks manager</h3>
+  <div class="d-flex">
+    <div class="jutify-content-between">
+      <%= link_to "Sing in", new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to "Sing up", new_user_registration_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
